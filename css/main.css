@@ -79,8 +79,19 @@ button {
 .dark-theme {
   background: #1E1F21;
 }
+@media (max-width: 768px) {
+  .dark-theme .header-btns {
+    background: #1E1F21 !important;
+  }
+}
+.dark-theme .contact-inner {
+  background-image: url("data:image/svg+xml,%3Csvg width='959' height='225' viewBox='0 0 959 225' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.08683 86.6697C-4.10553 77.4422 -1.68601 68.4541 13.491 66.5942L553.013 0.476542C568.19 -1.38338 590.377 4.58922 602.569 13.8167C614.762 23.0442 612.342 32.0324 597.165 33.8923L581.98 35.7532L379.903 87.5703L739.569 58.2206L742.85 57.5614C749.752 56.1744 758.005 55.6964 766.613 56.0137L915.466 43.8669C928.221 42.8261 945.413 49.7709 953.866 59.3785C962.319 68.9861 958.832 77.6184 946.078 78.6592L793.897 91.0776L507.526 148.62L858.581 119.973C871.336 118.932 888.528 125.877 896.981 135.485C905.434 145.092 901.947 153.725 889.193 154.765L195.04 211.41L135.967 223.28C116.079 227.276 84.9796 223.726 66.5041 215.351C56.9448 211.018 52.638 206.242 53.4621 202.087C47.2377 193.35 51.0987 185.866 62.9182 184.901L140.712 178.553L427.083 121.011L157.483 143.011C156.983 143.054 156.482 143.095 155.977 143.134L140.818 144.371C136.279 144.741 131.177 144.1 126.107 142.687C115.375 141.602 105.136 139.541 96.9524 136.581C75.9165 128.973 76.4294 118.3 98.098 112.744L102.568 111.598C104.538 110.537 107.097 109.832 110.207 109.578L110.555 109.55L230.252 78.857L57.6434 100.01C42.4664 101.87 20.2792 95.8972 8.08683 86.6697Z' fill='%232E2F2F'/%3E%3C/svg%3E%0A") !important;
+}
+.dark-theme .review-avatar {
+  background: #fff !important;
+}
 .dark-theme .light-img {
-  display: none;
+  display: none !important;
 }
 .dark-theme .dark-img {
   display: block !important;
@@ -147,6 +158,9 @@ button {
   color: #fff;
 }
 
+.header {
+  position: relative;
+}
 .header .logo {
   color: #3A3B3D;
   font-weight: 700;
@@ -162,6 +176,19 @@ button {
     font-size: 18px;
   }
 }
+@media (max-width: 768px) {
+  .header .header-btns {
+    position: absolute;
+    background: #fff;
+    left: 0;
+    top: 58px;
+    width: 100%;
+    border-bottom: 1px solid #b4b4b4;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+}
 .header .header-btns a {
   font-weight: 700;
   font-size: 16px;
@@ -175,6 +202,11 @@ button {
 }
 .header .header-btns .log-link:hover {
   opacity: 0.8;
+}
+.header .header-btns.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
 }
 
 .main-screen h1 {
@@ -217,8 +249,6 @@ h2.title {
   font-weight: 700;
   font-size: 60px;
   line-height: 65px;
-  display: flex;
-  align-items: center;
   text-align: center;
   color: #1E1F21;
   max-width: 1100px;
@@ -430,4 +460,127 @@ img {
   background-image: url("../img/facebook-border.png");
   top: -15px;
   left: -15px;
+}
+
+@media (max-width: 540px) {
+  .reviews__subtitle {
+    width: 230px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+.reviews__subtitle .subtitle-text,
+.reviews__subtitle .rating-count {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #A5A5A5;
+}
+.reviews-slider {
+  max-width: 385px;
+  margin: 0 auto;
+}
+.reviews-slider-wrapper {
+  display: flex;
+}
+.reviews-slider-slide {
+  flex-shrink: 0;
+  background: #F9F9F9;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+@media (max-width: 540px) {
+  .reviews-slider-slide {
+    height: auto;
+    margin-top: 0 !important;
+  }
+}
+.reviews-slider-slide:nth-child(2n+1) {
+  margin-top: 15px;
+}
+.reviews-slider-slide .review-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #A5A5A5;
+  max-width: 340px;
+}
+.reviews-slider-slide .review-avatar {
+  background: #1E1F21;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+.reviews-slider-slide .review-avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.reviews-slider-slide .review-name {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1E1F21;
+}
+
+.pink-title {
+  color: #CB88FF !important;
+}
+
+.contact {
+  margin-top: 150px;
+}
+@media (max-width: 540px) {
+  .contact {
+    margin-top: 50px;
+  }
+}
+.contact-inner {
+  background-image: url("data:image/svg+xml,%3Csvg width='959' height='225' viewBox='0 0 959 225' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.08683 86.6697C-4.10553 77.4422 -1.686 68.4541 13.491 66.5942L553.013 0.476542C568.19 -1.38338 590.377 4.58922 602.569 13.8167C614.762 23.0442 612.342 32.0324 597.165 33.8923L581.98 35.7532L379.903 87.5703L739.569 58.2206L742.85 57.5614C749.752 56.1744 758.005 55.6964 766.613 56.0137L915.466 43.8669C928.221 42.8261 945.413 49.7709 953.866 59.3785C962.319 68.9861 958.832 77.6184 946.078 78.6592L793.897 91.0776L507.526 148.62L858.581 119.973C871.336 118.932 888.528 125.877 896.981 135.485C905.434 145.092 901.947 153.725 889.193 154.765L195.04 211.41L135.967 223.28C116.079 227.276 84.9796 223.726 66.5041 215.351C56.9448 211.018 52.638 206.242 53.4621 202.087C47.2377 193.35 51.0987 185.866 62.9182 184.901L140.712 178.553L427.083 121.011L157.483 143.011C156.983 143.054 156.482 143.095 155.977 143.134L140.818 144.371C136.279 144.741 131.177 144.1 126.107 142.687C115.375 141.602 105.136 139.541 96.9524 136.581C75.9165 128.973 76.4294 118.3 98.098 112.744L102.568 111.598C104.538 110.537 107.097 109.832 110.207 109.578L110.555 109.55L230.252 78.857L57.6434 100.01C42.4664 101.87 20.2792 95.8972 8.08683 86.6697Z' fill='%23F0F0F0'/%3E%3C/svg%3E%0A");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 540px) {
+  .contact-inner {
+    background-position: 0 15px;
+  }
+}
+.contact-inner p {
+  color: #696363;
+}
+
+.footer span {
+  font-size: 14px;
+}
+.footer-links {
+  padding-top: 15px;
+}
+.footer-links a {
+  color: #1E1F21;
+}
+@media (max-width: 768px) {
+  .footer-links a {
+    font-size: 14px;
+  }
+}
+.footer-links a:hover {
+  opacity: 0.6;
+}
+.footer .bottom-footer {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #A5A5A5;
+}
+@media (max-width: 768px) {
+  .footer .bottom-footer {
+    font-size: 14px;
+  }
 }
